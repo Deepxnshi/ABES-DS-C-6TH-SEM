@@ -25,11 +25,14 @@ const appendFile = async (path, data) => {
     }
 }
 
-const main = async () => {
-    await writeFile("example.txt", "This is write text");
-    await readFile("example.txt");
-    await appendFile("example.txt", " This is appended text.");
-    await readFile("example.txt");
-}
+console.log("Before write");
+writeFile("example.txt");
+console.log("After write");
 
-main();
+console.log("Before read");
+appendFile("example.txt", " This is appended text.");
+console.log("After append");
+
+console.log("Before read");
+readFile("example.txt");
+console.log("After read");
